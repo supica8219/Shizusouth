@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+    <meta content="静岡理工科大学のバス時刻を提供しています。ShizuSouth(しずさす)" name="description">
+    <link rel="shortcut icon" href="img/logo.jpg">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?data=1120">
+    <link rel="manifest" href="../manifest.json?data=1114">
+    <link rel="apple-touch-icon" href="img/logo.jpg" sizes="192x192">
+    <title>ShizuSouthバス時刻表</title>
+    <meta name="google-site-verification" content="cTLHw98HjFh764reNhYdfaeKFPQkps16a_G5GJjSJ70" />
+    <meta name="theme-color" content="#660033">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Shizusouth">
+    
+    <script>
+  	navigator.serviceWorker.register('../service-worker.js').then(function(registration){
+      button.onclick = function() {
+      registration.update();
+    }
+		console.log("Service Worker is registered!!");
+	  });
+    </script>
+  </head>
+  <body>
+    <div class="menu-wrapper-parent">
+      <div class="menu-wrapper-child">
+        <li id="close">メニューを閉じる</li>
+        <li><a href="https://shizusouth.com/shizusouthMobile/index.html">時刻表</a></li>
+        <li><a href="https://shizusouth.com/Article">記事</a></li>
+        <li><a href="https://shizusouth.com/test1/index.php">快適電車</a></li>
+      </div>
+    </div>
+    <div class="header-null">
+      <header>
+        <div class="headr-wrapper">
+          <div class="header-left">
+            <p>ShizuSouth</p>
+          </div>
+          <div class="header-right">
+              <a href="#"id="hamburger"><i class="fas fa-bars"></i></a>
+          </div>
+        </div>
+      </header>
+    </div>
+ <div class="them-wrapper">
+   <p>静岡理工科大生向けの<br>バス・電車時刻表サイト</p>
+ </div>
+  <div class="main-wrapper">
+    <div class="content">
+      <div class="AINOTime">
+  　　　　<h2>愛野駅バス発</h2>
+      </div>
+      <div class="DAIGAKUTime">
+        <h2>大学発</h2>
+      </div>
+
+    </div>
+    <div class="content">
+  　　　 <p class="content-title">時刻表</p>
+        <table id="table">
+          <thead>
+            <tr>
+              <td>時</td>
+              <td>愛野駅→大学</td>
+              <td>大学→愛野駅</td>
+            </tr>
+          </thead>
+          <tbody id="tbody">
+
+          </tbody>
+        </table>
+        <br>
+        <h5　class="sorce">公式ソース<a  href="https://www.sist.ac.jp/pdf/SchoolBusDia202105.pdf">時刻表リンク</a></p>
+
+        <h6>時刻表サービスの内容について、正確性・確実性等いかなる保証もおこないません。あくまで、スクールバスの利用にあたっての目安としてご利用ください。</p>
+<p>時刻表情報の提供にあたり、利用者がこのサービスに関して発生するいかなる損害についても、一切の責任を負いません。</p>
+  <p>※上記5月通常運行の時刻表  </p>
+        <p>最終更新日　2021/5/11 2:13</p>
+    </div>
+    <h2 class="Eki-desc">↓愛野駅発 電車時刻表↓</h2>
+    <div class="content">
+      <div class="ShizuokaTime">
+        <h2>静岡方面</h2>
+      </div>
+      <table id="table2">
+        <thead>
+          <tr>
+            <td>時</td>
+            <td>愛野駅時刻表</td>
+            <td>行先</td>
+          </tr>
+        </thead>
+        <tbody id="tbody2">
+
+        </tbody>
+      </table>
+    </div>
+    <div class="content">
+      <div class="HamamatuTime">
+        <h2>浜松方面</h2>
+      </div>
+      <table id="table3">
+        <thead>
+          <tr>
+            <td>時</td>
+            <td>愛野駅時刻表</td>
+            <td>行先</td>
+          </tr>
+        </thead>
+        <tbody id="tbody3">
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <button id="button">update</button>
+
+<script src="main.js?data=1122">
+</script>
+  </body>
+</html>
