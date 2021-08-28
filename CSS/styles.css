@@ -1,7 +1,11 @@
 *{margin:0px;padding:0px;}
 body{
  background-image: url("../img/logo.jpg");
- background-size: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #660033;
 }
 li{list-style: none;}
 a{text-decoration: none;}
@@ -39,6 +43,7 @@ header{
 }
 .content{
   background-color: #ffffff;
+  border:2px solid #f9f9f9;
   display:flex;
   width:85%;
   margin:10px auto;
