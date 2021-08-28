@@ -1,6 +1,6 @@
-*{margin:0px;}
+*{margin:0px;padding:0px;}
 body{
- background-image: url("img/logo.jpg");
+ background-image: url("../img/logo.jpg");
  background-size: 100%;
 }
 li{list-style: none;}
@@ -21,7 +21,7 @@ header{
 }
 .header-list li a{
   background-color: #660033;
-  font-size:20px;
+  font-size:40px;
   color:#fafafa;
   padding:30px 0px;
   text-align:center;
@@ -39,11 +39,11 @@ header{
 }
 .content{
   background-color: #ffffff;
-  border-left:10px solid #741042;
-  border-right:10px solid #741042;
   display:flex;
-  width:90%;
+  width:85%;
   margin:10px auto;
+  padding:10px;
+  border-radius: 10px;
 }
 .bus-soon{
   width:50%;
@@ -53,4 +53,5 @@ header{
 }
 .bus-soon p{
   margin:10px 0px;
+  color:#550022;
 }

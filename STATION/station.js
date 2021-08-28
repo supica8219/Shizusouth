@@ -56,19 +56,19 @@ function View_Bus_Soon(times,description){
 function Set_Datas(){
   var SH = new XMLHttpRequest();
   SH.addEventListener("load", Shizuoka_To_Hamamatu);
-  SH.open("GET", "./SH.txt");
+  SH.open("GET", "../DATA/SH.txt");
   SH.send();
   var HS = new XMLHttpRequest();
   HS.addEventListener("load", Hamamatu_To_Shizuoka);
-  HS.open("GET", "./HS.txt");
+  HS.open("GET", "../DATA/HS.txt");
   HS.send();
   var AD = new XMLHttpRequest();
   AD.addEventListener("load", Aino_To_Daigaku);
-  AD.open("GET", "./AD.txt");
+  AD.open("GET", "../DATA/AD.txt");
   AD.send();
   var DA = new XMLHttpRequest();
   DA.addEventListener("load", Daigaku_To_Aino);
-  DA.open("GET", "./DA.txt");
+  DA.open("GET", "../DATA/DA.txt");
   DA.send();
   DATE = new Date();
   DA.onreadystatechange = function() {
