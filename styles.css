@@ -1,26 +1,30 @@
 *{margin:0px;}
 body{
-  background-color: #fafafa;
+ background-image: url("img/logo.jpg");
+ background-size: 100%;
 }
 li{list-style: none;}
 a{text-decoration: none;}
+h1{
+  color:#fafafa;
+}
 header{
+  position:fixed;
+  bottom:0px;left:0px;width:100%;
   background-color: #660033;
 }
 .header-list{
   display:flex;
-  width:80%;
-  margin:0 auto;
 }
-.header-list h1{
-  padding:18px 0px;
-  color:#fafafa;
+.header-list li{
+  width:50%;
 }
 .header-list li a{
   background-color: #660033;
   font-size:20px;
   color:#fafafa;
-  padding:30px 40px;
+  padding:30px 0px;
+  text-align:center;
   display:block;
 }
 .header-list li a:hover{
@@ -29,7 +33,9 @@ header{
 .theme{
   font-size:20px;
   text-align:center;
+  font-weight:bolder;
   padding:30px 0px;
+  color:#fafafa;
 }
 .content{
   background-color: #ffffff;

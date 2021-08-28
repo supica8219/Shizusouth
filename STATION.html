@@ -2,37 +2,34 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
     <title>ShizuSouth</title>
     <meta content="静岡理工科大生の時刻表サイト" name="description">
     <link rel="shortcut icon" href="img/logo.jpg">
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css?data=1120">
-    <link rel="manifest" href="../manifest.json?data=1114">
+    <link rel="manifest" href="./manifest.json?data=1115">
     <link rel="apple-touch-icon" href="img/logo.jpg" sizes="192x192">
     <meta name="google-site-verification" content="cTLHw98HjFh764reNhYdfaeKFPQkps16a_G5GJjSJ70" />
     <meta name="theme-color" content="#660033">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Shizusouth">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
     <script>
   	navigator.serviceWorker.register('../service-worker.js').then(function(registration){
-      button.onclick = function() {
-      registration.update();
-    }
 		console.log("Service Worker is registered!!");
 	  });
     </script>
   </head>
   <body id="body">
-      <header>
-        <ul class="header-list">
-          <li><a href="">電車時刻表</a></li>
-          <li><a href="">バス時刻表</a></li>
-        </ul>
-      </header>
-      <p class="theme">静岡理工科大生のスクールバス時刻表</p>
-    <script src="main.js"></script> 
-    <script src="main.js?data=1122"></script>
+    <header>
+      <ul class="header-list">
+        <li><a href="./STATION.html">電車</a></li>
+        <li><a href="./BUS.html">バス</a></li>
+      </ul>
+    </header>
+      <h1>ShizuSouth</h1>
+      <p class="theme">愛野駅時刻表</p>
+    <script src="station.js"></script>
   </body>
 </html>

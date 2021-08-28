@@ -21,7 +21,7 @@ function View_Bus_Soon(times,description){
   for(var i=0;i<times.length&&count<3;i++){
     if(times[i*3]>DATE.getHours()){
       var p=document.createElement("p");
-      p.innerHTML=times[i*3]+":"+String(times[i*2]).padStart(2, '0');
+      p.innerHTML=times[i*3]+":"+String(times[1+i*3]).padStart(2, '0');
       div.appendChild(p);
       count++;
     }
