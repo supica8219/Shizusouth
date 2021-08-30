@@ -18,8 +18,12 @@ function View_Station_Soon(times,description){
   div.appendChild(p);
   div.classList.add("bus-soon");
   var count=0;
-  for(var i=0;i<times.length&&count<3;i++){
-    if(times[i*3]>DATE.getHours()){
+  for(var i=0;i<times.length&&count<4;i++){
+    if(
+      (times[i*3]>DATE.getHours())
+      ||
+      (times[i*3]==DATE.getHours()&&times[1+i*3]>DATE.getMinutes())
+      ){
       var p=document.createElement("p");
       p.innerHTML=times[i*3]+":"+String(times[1+i*3]).padStart(2, '0')+" "+times[2+i*3];
       div.appendChild(p);

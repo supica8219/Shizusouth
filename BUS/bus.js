@@ -18,13 +18,24 @@ function View_Bus_Soon(times,description){
   div.appendChild(p);
   div.classList.add("bus-soon");
   var count=0;
-  for(var i=0;i<times.length&&count<3;i++){
-    if(times[i*3]>DATE.getHours()){
+  for(var i=0;i<(times.length)/2&&count<4;i++){
+    if(
+      (times[i*3]==DATE.getHours()&&times[2+i*3]>DATE.getMinutes())||
+      times[i*3]>DATE.getHours()
+    ){
       var p=document.createElement("p");
-      p.innerHTML=times[i*3]+":"+String(times[1+i*3]).padStart(2, '0');
+      p.innerHTML=times[i*3]+":"+String(times[2+i*3]).padStart(2, '0');
       div.appendChild(p);
       count++;
     }
+  }
+  if(
+    (DATE.getHours()>times[times.length-3])||
+    (DATE.getHours()==times[times.length-3]&&DATE.getMinutes()>times[times.length-1])
+  ){
+    var p=document.createElement("p");
+    p.innerHTML="　本日のバスは終了しました";
+    div.appendChild(p);
   }
   return div;
 }

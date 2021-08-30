@@ -1,8 +1,8 @@
 {
     "name"              : "Shizusouth",
     "short_name"        : "Shizusouth",
-    "description"       : "SISTスクールバス",
-    "start_url"         : "https://shizusouth.com/STATION/index.html",
+    "description"       : "SIST時刻表サイト",
+    "start_url"         : "https://shizusouth.com/index.html",
     "display"           : "standalone",
     "background_color"  : "#660033",
     "theme_color"       : "#660033",
