@@ -37,20 +37,7 @@ function Set_Datas(){
   DA.addEventListener("load", Daigaku_To_Aino);
   DA.open("GET", "../DATA/DA.txt");
   DA.send();
-  var SH = new XMLHttpRequest();
-  SH.addEventListener("load", Shizuoka_To_Hamamatu);
-  SH.open("GET", "../DATA/SH.txt");
-  SH.send();
-  var HS = new XMLHttpRequest();
-  HS.addEventListener("load", Hamamatu_To_Shizuoka);
-  HS.open("GET", "../DATA/HS.txt");
-  HS.send();
   DATE = new Date();
-  HS.onreadystatechange = function() {
-    if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-        View_Bus();
-    }
-  }
 }
 
 function Aino_To_Daigaku () {
@@ -58,7 +45,7 @@ function Aino_To_Daigaku () {
   for(i=0;i<AINO.length;i++){
      AINO[i]=AINO[i].replace('\r\n','');
   }
-  console.log(AINO);
+  Do_View();
 }
 
 function Daigaku_To_Aino () {
@@ -66,6 +53,7 @@ function Daigaku_To_Aino () {
   for(i=0;i<DAIGAKU.length;i++){
      DAIGAKU[i]=DAIGAKU[i].replace('\r\n','');
   }
+  Do_View();
 }
 
 function Shizuoka_To_Hamamatu () {
@@ -79,5 +67,13 @@ function Hamamatu_To_Shizuoka () {
   SHIZUOKA=this.responseText.split(",");
   for(i=0;i<SHIZUOKA.length;i++){
     SHIZUOKA[i]=SHIZUOKA[i].replace('\r\n','');
+  }
+}
+function Do_View(){
+  if(AINO.length&&DAIGAKU.length){
+    console.log("GO");
+    View_Bus();
+  }else{
+    console.log("YET");
   }
 }
