@@ -16,6 +16,7 @@ header{
   position:fixed;
   bottom:0px;left:0px;width:100%;
   background-color: #660033;
+  z-index: 1;
 }
 .header-list{
   display:flex;
@@ -59,4 +60,23 @@ header{
 .bus-soon p{
   margin:10px 0px;
   color:#550022;
+}
+.hamburger-menu{
+  display:none;
+  top:0px;
+  right:0px;
+  width:50%;
+  height:100%;
+  position:fixed;
+  background-color: #660033;
+  z-index: 2;
+}
+.hamburger-menu ul li a{
+  display:block;
+  color:white;
+  font-size:20px;
+  padding:10px 0px;
+}
+.hamburger-menu ul li a:hover{
+  background-color: #741042;
 }
