@@ -6,7 +6,7 @@
     <meta content="静岡理工科大生の時刻表サイト" name="description">
     <link rel="shortcut icon" href="https://shizusouth.com/img/logo.jpg">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="./CSS/styles.css?data=1131">
+    <link rel="stylesheet" href="https://shizusouth.com/CSS/styles.css?data=1161">
     <link rel="manifest" href="https://shizusouth.com/manifest.json?data=1136">
     <link rel="apple-touch-icon" href="https://shizusouth.com/img/logo.jpg" sizes="192x192">
     <meta name="google-site-verification" content="cTLHw98HjFh764reNhYdfaeKFPQkps16a_G5GJjSJ70" />
@@ -24,8 +24,10 @@
     
   </head>
   <body id="body">
-    <div class="hamburger-menu">
+    <span class="material-icons" class="menu-button"onclick="view_menu()"style="color:white;padding:20px;position:fixed;top:0px;right:0px;">reorder</span>
+    <div class="hamburger-menu" id="menu">
       <ul>
+        <li><a href="#" onclick="close_menu()">閉じる</a></li>
         <li><a href="https://shizusouth.com/STATION/index.html"><span class="material-icons"style="font-size:20px;">directions_transit_filled</span>電車</a></li>
         <li><a href="https://shizusouth.com/BUS/index.html"><span class="material-icons"style="font-size:20px;">directions_bus_filled</span>バス</a></li>
       </ul>
@@ -36,12 +38,22 @@
         <li><a href="https://shizusouth.com/BUS/index.html"><span class="material-icons"style="font-size:40px;">directions_bus_filled</span><p style="font-size:20px;font-weight:bold;">バス</p></a></li>
       </ul>
     </header>
-      <h1>Shizusouthへようこそ</h1>
+      <h1 onclick="view_menu()">Shizusouthへようこそ</h1>
       <p class="theme"></p>
     <style>
     #body{background-image:none;background-color: #660033;}
     h1{position:absolute;top:40%;left:45%;transform: translate(-50%, -50%); font-size:60px;}
     li{border:2px solid #550022}
     </style>
+    <script>
+        function view_menu(){
+          var menu=document.getElementById("menu");
+          menu.style.display="block";
+        }
+        function close_menu(){
+          var menu=document.getElementById("menu");
+          menu.style.display="none";
+        }
+    </script>
   </body>
 </html>
