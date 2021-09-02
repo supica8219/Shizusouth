@@ -88,3 +88,11 @@ function Do_View(){
     console.log("YET");
   }
 }
+function view_menu(){
+  var menu=document.getElementById("menu");
+  menu.style.display="block";
+}
+function close_menu(){
+  var menu=document.getElementById("menu");
+  menu.style.display="none";
+}
