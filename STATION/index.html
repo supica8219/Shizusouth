@@ -6,7 +6,7 @@
     <meta content="静岡理工科大生の時刻表サイト" name="description">
     <link rel="shortcut icon" href="../img/logo.jpg">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://shizusouth.com/CSS/styles.css">
+    <link rel="stylesheet" href="../CSS/styles.css">
     <link rel="manifest" href="https://shizusouth.com/manifest.json?data=1161">
     <link rel="apple-touch-icon" href="https://shizusouth.com/img/logo.jpg" sizes="192x192">
     <meta name="google-site-verification" content="cTLHw98HjFh764reNhYdfaeKFPQkps16a_G5GJjSJ70" />
@@ -23,8 +23,7 @@
     </script>
     
   </head>
-  <body id="body" style="padding-bottom:170px;">
-    <span class="material-icons" class="menu-button"onclick="view_menu()"style="color:white;padding:20px;position:fixed;top:0px;right:0px;">reorder</span>
+  <body id="body" style="padding-bottom:200px;padding-top:100px;">
     <div class="hamburger-menu" id="menu">
       <ul>
         <li><a href="#" onclick="close_menu()">閉じる</a></li>
@@ -39,8 +38,13 @@
         <li><a href="https://shizusouth.com/BUS/index.html"><span class="material-icons"style="font-size:40px;">directions_bus_filled</span><p style="font-size:20px;font-weight:bold;">バス</p></a></li>
       </ul>
     </header>
-    <h1><a href="https://shizusouth.com/"style="color:#ffffff;">Shizusouth</a></h1>
-      <p class="theme"style="font-size:40px;">愛野駅時刻表</p>
-    <script src="https://shizusouth.com/STATION/station.js"></script>
+    
+      <p class="theme"style="color:#660033;font-size:30px;">愛野駅時刻表</p>
+
+    <footer>
+      <h1><a href="https://shizusouth.com/"style="color:#ffffff;">Shizusouth</a></h1>
+      <span class="material-icons" class="menu-button"onclick="view_menu()"style="background-color:white;color:#660033;padding:12px;position:fixed;top:0px;right:0px;">reorder</span>
+    </footer>
+    <script src="./station.js"></script>
   </body>
 </html>

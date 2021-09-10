@@ -6,7 +6,7 @@
     <meta content="静岡理工科大生の時刻表サイト" name="description">
     <link rel="shortcut icon" href="https://shizusouth.com/img/logo.jpg">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://shizusouth.com/CSS/styles.css?data=1161">
+    <link rel="stylesheet" href="./CSS/styles.css?data=1161">
     <link rel="manifest" href="https://shizusouth.com/manifest.json?data=1136">
     <link rel="apple-touch-icon" href="https://shizusouth.com/img/logo.jpg" sizes="192x192">
     <meta name="google-site-verification" content="cTLHw98HjFh764reNhYdfaeKFPQkps16a_G5GJjSJ70" />
@@ -23,8 +23,7 @@
     </script>
     
   </head>
-  <body id="body">
-    <span class="material-icons" class="menu-button"onclick="view_menu()"style="color:white;padding:20px;position:fixed;top:0px;right:0px;">reorder</span>
+  <body id="body" style="padding-bottom:200px;padding-top:100px;">
     <div class="hamburger-menu" id="menu">
       <ul>
         <li><a href="#" onclick="close_menu()">閉じる</a></li>
@@ -39,12 +38,16 @@
         <li><a href="https://shizusouth.com/BUS/index.html"><span class="material-icons"style="font-size:40px;">directions_bus_filled</span><p style="font-size:20px;font-weight:bold;">バス</p></a></li>
       </ul>
     </header>
-      <h1 onclick="view_menu()">Shizusouthへようこそ</h1>
-      <p class="theme"></p>
+    <footer>
+      <h1><a href="https://shizusouth.com/"style="color:#ffffff;">Shizusouth</a></h1>
+      <span class="material-icons" class="menu-button"onclick="view_menu()"style="background-color:white;color:#660033;padding:12px;position:fixed;top:0px;right:0px;">reorder</span>
+    </footer>
+      <h1 style="text-align:center;padding:30px 0px;"><span style="font-size:80px;font-weight:900;">Shizusouth</span><br><span style="font-size:70px;font-weight:600;">ようこそ</span></h1>
+      <p style="display:block;width:60%;margin:0 auto;color:#660033;font-weight:800;text-align:center;">このサイトは静岡理工科大学のスクールバス時刻表サイトです。<br>
+      電車、バスを選択して時刻表を確認してください。</p>
     <style>
-    #body{background-image:none;background-color: #660033;}
-    h1{position:absolute;top:40%;left:45%;transform: translate(-50%, -50%); font-size:60px;}
-    li{border:2px solid #550022}
+    #body{background-image:none;background-color: #ffffff;}
+
     </style>
     <script>
         function view_menu(){

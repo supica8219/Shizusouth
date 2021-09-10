@@ -1,21 +1,22 @@
 *{margin:0px;padding:0px;}
 body{
- background-image: url("../img/logo.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-color: #660033;
+  background-color: #ffffff;
 }
 li{list-style: none;}
 a{text-decoration: none;}
 h1{
-  color:#fafafa;
+  color:#660033;
+}
+footer{
+  position:fixed;
+  top:0px;left:0px;width:100%;
+  background-color: #660033;
+  z-index: 1;
 }
 header{
   position:fixed;
   bottom:0px;left:0px;width:100%;
-  background-color: #660033;
+  background-color: #ebebeb;
   z-index: 1;
 }
 .header-list{
@@ -25,26 +26,25 @@ header{
   width:50%;
 }
 .header-list li a{
-  background-color: #660033;
+  background-color: #ebebeb;
   font-size:40px;
-  color:#fafafa;
+  color:#660033;
   padding:30px 0px;
   text-align:center;
   display:block;
 }
 .header-list li a:hover{
-  background-color: #741042;
+  background-color: #d6d6d6;
 }
 .theme{
   font-size:20px;
   text-align:center;
   font-weight:bolder;
   padding:30px 0px;
-  color:#fafafa;
+  color:660033;
 }
 .content{
-  background-color: #ffffff;
-  border:2px solid #f9f9f9;
+  background-color: #ebebeb;
   display:flex;
   width:85%;
   margin:10px auto;
@@ -54,8 +54,12 @@ header{
 .bus-soon{
   width:50%;
   text-align:center;
+  font-size:30px;
+  font-weight:900;
+}
+.bus-soon-desc{
   font-size:20px;
-  font-weight:bolder;
+  font-weight:500;
 }
 .bus-soon p{
   margin:10px 0px;
@@ -69,6 +73,7 @@ header{
   height:100%;
   position:fixed;
   background-color: #660033;
+  opacity:0.8;
   z-index: 2;
 }
 .hamburger-menu ul li a{
@@ -78,5 +83,5 @@ header{
   padding:10px 0px;
 }
 .hamburger-menu ul li a:hover{
-  background-color: #741042;
+  background-color: #d6d6d6;
 }

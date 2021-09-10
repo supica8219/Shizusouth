@@ -15,6 +15,7 @@ function View_Station_Soon(times,description){
   var div=document.createElement("div");
   var p=document.createElement("p");
   p.innerHTML=description;
+  p.classList.add("bus-soon-desc");
   div.appendChild(p);
   div.classList.add("bus-soon");
   var count=0;
@@ -44,6 +45,7 @@ function View_Bus_Soon(times,description){
   var div=document.createElement("div");
   var p=document.createElement("p");
   p.innerHTML=description;
+  p.classList.add("bus-soon-desc");
   div.appendChild(p);
   div.classList.add("bus-soon");
   var count=0;
