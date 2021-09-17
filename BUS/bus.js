@@ -21,11 +21,11 @@ function View_Bus_Soon(times,description){
   var count=0;
   for(var i=0;i<(times.length)/2&&count<4;i++){
     if(
-      (times[i*3]==DATE.getHours()&&times[2+i*3]>DATE.getMinutes())||
+      (times[i*3]==DATE.getHours()&&times[1+i*3]>DATE.getMinutes())||
       times[i*3]>DATE.getHours()
     ){
       var p=document.createElement("p");
-      p.innerHTML=times[i*3]+":"+String(times[2+i*3]).padStart(2, '0');
+      p.innerHTML=times[i*3]+":"+String(times[1+i*3]).padStart(2, '0');
       div.appendChild(p);
       count++;
     }
@@ -43,11 +43,11 @@ function View_Bus_Soon(times,description){
 function Set_Datas(){
   var AD = new XMLHttpRequest();
   AD.addEventListener("load", Aino_To_Daigaku);
-  AD.open("GET", "../DATA/AD.txt");
+  AD.open("GET", "https://shizusouth.com/DATA/AD.txt?data=11");
   AD.send();
   var DA = new XMLHttpRequest();
   DA.addEventListener("load", Daigaku_To_Aino);
-  DA.open("GET", "../DATA/DA.txt");
+  DA.open("GET", "https://shizusouth.com/DATA/DA.txt?data=11");
   DA.send();
   DATE = new Date();
 }
