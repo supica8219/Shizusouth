@@ -6,12 +6,25 @@ Set_Datas();
 function View_Station(){
   var div=document.createElement("div");
   div.classList.add("content");
-  div.appendChild(View_Station_Soon(SHIZUOKA,"静岡方面"));
-  div.appendChild(View_Station_Soon(HAMAMATU,"浜松方面"));
+  div.id="content"
+  div.appendChild(View_Station_Soon(SHIZUOKA,"静岡方面",4));
+  div.appendChild(View_Station_Soon(HAMAMATU,"浜松方面",4));
   body.appendChild(div);
+  var button = document.createElement("button");
+  button.setAttribute("onclick","More_Info_Station()");
+  button.classList.add("button")
+  button.innerHTML = "+";
+  body.appendChild(button);
 }
 
-function View_Station_Soon(times,description){
+function More_Info_Station(){
+  var div = document.getElementById("content")
+  div.innerHTML = ""
+  div.appendChild(View_Station_Soon(SHIZUOKA,"静岡方面",50));
+  div.appendChild(View_Station_Soon(HAMAMATU,"浜松方面",50));
+}
+
+function View_Station_Soon(times,description,view_num){
   var div=document.createElement("div");
   var p=document.createElement("p");
   p.innerHTML=description;
@@ -19,7 +32,7 @@ function View_Station_Soon(times,description){
   div.appendChild(p);
   div.classList.add("bus-soon");
   var count=0;
-  for(var i=0;i<times.length&&count<4;i++){
+  for(var i=0;i<times.length&&count<view_num;i++){
     if(
       (times[i*3]>DATE.getHours())
       ||
@@ -33,32 +46,7 @@ function View_Station_Soon(times,description){
   }
   return div;
 }
-function View_Bus(){
-  var div=document.createElement("div");
-  div.classList.add("content");
-  div.appendChild(View_Bus_Soon(SHIZUOKA,"愛野駅発"));
-  div.appendChild(View_Bus_Soon(HAMAMATU,"大学発"));
-  body.appendChild(div);
-}
 
-function View_Bus_Soon(times,description){
-  var div=document.createElement("div");
-  var p=document.createElement("p");
-  p.innerHTML=description;
-  p.classList.add("bus-soon-desc");
-  div.appendChild(p);
-  div.classList.add("bus-soon");
-  var count=0;
-  for(var i=0;i<times.length&&count<3;i++){
-    if(times[i*3]>DATE.getHours()){
-      var p=document.createElement("p");
-      p.innerHTML=times[i*3]+":"+String(times[1+i*3]).padStart(2, '0');
-      div.appendChild(p);
-      count++;
-    }
-  }
-  return div;
-}
 function Set_Datas(){
   var SH = new XMLHttpRequest();
   SH.addEventListener("load", Shizuoka_To_Hamamatu);

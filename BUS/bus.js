@@ -6,12 +6,38 @@ Set_Datas();
 function View_Bus(){
   var div=document.createElement("div");
   div.classList.add("content");
-  div.appendChild(View_Bus_Soon(AINO,"愛野駅->大学"));
-  div.appendChild(View_Bus_Soon(DAIGAKU,"大学->愛野駅"));
+  div.id = "content"
+  div.appendChild(View_Bus_Soon(AINO,"愛野駅->大学",4));
+  div.appendChild(View_Bus_Soon(DAIGAKU,"大学->愛野駅",4));
   body.appendChild(div);
+  var button = document.createElement("button");
+  button.setAttribute("onclick","More_Info_Bus()");
+  button.id ="button"
+  button.classList.add("button")
+  button.innerHTML = "+";
+  body.appendChild(button);
 }
 
-function View_Bus_Soon(times,description){
+function More_Info_Bus(){
+  var div = document.getElementById("content")
+  div.innerHTML = ""
+  div.appendChild(View_Bus_Soon(AINO,"愛野駅->大学",50));
+  div.appendChild(View_Bus_Soon(DAIGAKU,"大学->愛野駅",50));
+  var button = document.getElementById("button")
+  button.innerHTML = "-";
+  button.setAttribute("onclick","Decrease_Info_Bus()");
+}
+function Decrease_Info_Bus(){
+  var div = document.getElementById("content")
+  div.innerHTML = ""
+  div.appendChild(View_Bus_Soon(AINO,"愛野駅->大学",4));
+  div.appendChild(View_Bus_Soon(DAIGAKU,"大学->愛野駅",4));
+  var button = document.getElementById("button")
+  button.innerHTML = "+";
+  button.setAttribute("onclick","More_Info_Bus()");
+}
+
+function View_Bus_Soon(times,description,view_num){
   var div=document.createElement("div");
   var p=document.createElement("p");
   p.innerHTML=description;
@@ -19,7 +45,7 @@ function View_Bus_Soon(times,description){
   div.appendChild(p);
   div.classList.add("bus-soon");
   var count=0;
-  for(var i=0;i<(times.length)/2&&count<4;i++){
+  for(var i=0;i<(times.length)/2&&count<view_num;i++){
     if(
       (times[i*3]==DATE.getHours()&&times[1+i*3]>DATE.getMinutes())||
       times[i*3]>DATE.getHours()
@@ -43,11 +69,11 @@ function View_Bus_Soon(times,description){
 function Set_Datas(){
   var AD = new XMLHttpRequest();
   AD.addEventListener("load", Aino_To_Daigaku);
-  AD.open("GET", "https://shizusouth.com/DATA/AD.txt?data=11");
+  AD.open("GET", "../DATA/AD.txt?data=11");
   AD.send();
   var DA = new XMLHttpRequest();
   DA.addEventListener("load", Daigaku_To_Aino);
-  DA.open("GET", "https://shizusouth.com/DATA/DA.txt?data=11");
+  DA.open("GET", "../DATA/DA.txt?data=11");
   DA.send();
   DATE = new Date();
 }
