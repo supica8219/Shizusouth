@@ -12,6 +12,7 @@ function View_Station(){
   body.appendChild(div);
   var button = document.createElement("button");
   button.setAttribute("onclick","More_Info_Station()");
+  button.id ="button";
   button.classList.add("button")
   button.innerHTML = "+";
   body.appendChild(button);
@@ -22,6 +23,19 @@ function More_Info_Station(){
   div.innerHTML = ""
   div.appendChild(View_Station_Soon(SHIZUOKA,"静岡方面",50));
   div.appendChild(View_Station_Soon(HAMAMATU,"浜松方面",50));
+  var button = document.getElementById("button");
+  button.innerHTML = "-";
+  button.setAttribute("onclick","Decrease_Info_Station()");
+}
+
+function Decrease_Info_Station(){
+  var div = document.getElementById("content")
+  div.innerHTML = ""
+  div.appendChild(View_Station_Soon(SHIZUOKA,"静岡方面",4));
+  div.appendChild(View_Station_Soon(HAMAMATU,"浜松方面",4));
+  var button = document.getElementById("button");
+  button.innerHTML = "+";
+  button.setAttribute("onclick","More_Info_Station()");
 }
 
 function View_Station_Soon(times,description,view_num){

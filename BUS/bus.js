@@ -12,24 +12,24 @@ function View_Bus(){
   body.appendChild(div);
   var button = document.createElement("button");
   button.setAttribute("onclick","More_Info_Bus()");
-  button.id ="button"
-  button.classList.add("button")
+  button.id ="button";
+  button.classList.add("button");
   button.innerHTML = "+";
   body.appendChild(button);
 }
 
 function More_Info_Bus(){
-  var div = document.getElementById("content")
+  var div = document.getElementById("content");
   div.innerHTML = ""
   div.appendChild(View_Bus_Soon(AINO,"愛野駅->大学",50));
   div.appendChild(View_Bus_Soon(DAIGAKU,"大学->愛野駅",50));
-  var button = document.getElementById("button")
+  var button = document.getElementById("button");
   button.innerHTML = "-";
   button.setAttribute("onclick","Decrease_Info_Bus()");
 }
 function Decrease_Info_Bus(){
-  var div = document.getElementById("content")
-  div.innerHTML = ""
+  var div = document.getElementById("content");
+  div.innerHTML = "";
   div.appendChild(View_Bus_Soon(AINO,"愛野駅->大学",4));
   div.appendChild(View_Bus_Soon(DAIGAKU,"大学->愛野駅",4));
   var button = document.getElementById("button")
