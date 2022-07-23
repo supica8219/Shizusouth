@@ -53,7 +53,6 @@ header{
 }
 .bus-soon{
   width:50%;
-  text-align:center;
   font-size:30px;
   font-weight:900;
 }
@@ -64,7 +63,9 @@ header{
 .bus-soon p{
   margin:10px 0px;
   color:#550022;
+  text-align:center;
 }
+
 .hamburger-menu{
   display:none;
   top:0px;

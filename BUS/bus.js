@@ -56,9 +56,10 @@ function View_Bus_Soon(times,description,view_num){
       count++;
     }
   }
+
   if(
     (DATE.getHours()>times[times.length-3])||
-    (DATE.getHours()==times[times.length-3]&&DATE.getMinutes()>times[times.length-1])
+    (DATE.getHours()==times[times.length-3]&&DATE.getMinutes()>times[times.length-2])
   ){
     var p=document.createElement("p");
     p.innerHTML="　本日のバスは終了しました";
