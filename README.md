@@ -26,7 +26,6 @@
 
 - フロントエンド: HTML / CSS / JavaScript
 - バックエンド: PHP
-- インフラ: VPS / Cloudflare
 
 ---
 
