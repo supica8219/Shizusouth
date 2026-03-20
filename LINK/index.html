@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>静岡理工科大学 各駅時刻表 SIST</title>
+    <meta content="静岡理工科大生 各駅時刻表 SIST" name="description">
+    <link rel="shortcut icon"href="/img/shizusouth_logo_192.png">
+    <link media="print" onload="this.media='all'"rel="stylesheet"href="/CSS/styles.css">
+    <link rel="manifest"href="/manifest.json">
+    <link rel="apple-touch-icon"href="/img/shizusouth_logo_192.png"sizes="192x192">
+    <meta name="google-site-verification"content="cTLHw98HjFh764reNhYdfaeKFPQkps16a_G5GJjSJ70">
+    <meta name="theme-color"content="#603">
+    <meta name="apple-mobile-web-app-capable"content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style"content="black">
+    <meta name="apple-mobile-web-app-title"content="Shizusouth">
+    <meta name="viewport"content="width=device-width,initial-scale=1.0,user-scalable=yes">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+  </head>
+  <body>
+    <header>
+      <a href="https://twitter.com/FoXide531"><img src="/img/kurogane3.png"alt="kurogane"class="kurogane"></a>
+      <h1 style="display:inline-block;"><a href="/TOP/"class="title">Shizusouth</a></h1>
+      <img src="/img/menu.svg"onclick="view_menu()"style="background-color:white;position:fixed;top:0px;right:0px;"alt="menu">
+    </header>
+    <main id="body"style="margin-top:10px;">
+      <p class="theme2"id="theme">JR各駅時刻表</p>
+      <form action="#"method="get" id="form-link"class="center">
+        <a href="#"target="_blank"style="display:block;font-size:20px;font-weight:900;color:#502;"id="station">出発駅</a>
+        <select name="station_name" id="station_name"style="padding:7px;">
+          <option value="豊橋">豊橋駅</option>
+          <option value="二川">二川駅</option>
+          <option value="新所原">新所原駅</option>
+          <option value="鷲津">鷲津駅</option>
+          <option value="新居町">新居町駅</option>
+          <option value="弁天島">弁天島駅</option>
+          <option value="舞阪">舞阪駅</option>
+          <option value="高塚">高塚駅</option>
+          <option value="浜松">浜松駅</option>
+          <option value="天竜川">天竜川駅</option>
+          <option value="豊田町">豊田町駅</option>
+          <option value="磐田">磐田駅</option>
+          <option value="御厨">御厨駅</option>
+          <option value="袋井">袋井駅</option>
+          <option value="愛野"selected> 愛野駅</option>
+          <option value="掛川">掛川駅</option>
+          <option value="菊川">菊川駅</option>
+          <option value="金谷">金谷駅</option>
+          <option value="島田">島田駅</option>
+          <option value="六合">六合駅</option>
+          <option value="藤枝">藤枝駅</option>
+          <option value="西焼津">西焼津駅</option>
+          <option value="焼津">焼津駅</option>
+          <option value="用宗">用宗駅</option>
+          <option value="安倍川">安倍川駅</option>
+          <option value="静岡">静岡駅</option>
+          <option value="東静岡">東静岡駅</option>
+          <option value="草薙">草薙駅</option>
+          <option value="清水">清水駅</option>
+          <option value="興津">興津駅</option>
+          <option value="由比">由比駅</option>
+          <option value="蒲原">蒲原駅</option>
+          <option value="新蒲原">新蒲原駅</option>
+          <option value="富士川">富士川駅</option>
+          <option value="富士">富士駅</option>
+          <option value="吉原">吉原駅</option>
+          <option value="東田子の浦">東田子の浦駅</option>
+          <option value="原">原駅</option>
+          <option value="片浜">片浜駅</option>
+          <option value="沼津">沼津駅</option>
+          <option value="三島">三島駅</option>
+          <option value="函南">函南駅</option>
+          <option value="熱海">熱海駅</option>
+        </select>
+      </form>
+      <div id="content"class="content"></div>
+      <button onclick='set_station()'id="default_button" style="display:none;margin:0 auto;">デフォルト駅に設定</button>
+      <button id="button"class="button"onclick="More_Info_Station()"></button>
+    </main>
+    <footer>
+      <ul>
+        <li><a href="/STATION/"><img src="/img/train.svg"alt="train"><p style="font-size:20px;font-weight:bold;">電車</p></a></li>
+        <li><a href="/"><img src="/img/bus.svg"alt="bus"><p style="font-size:20px;font-weight:bold;">バス</p></a></li>
+      </ul>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        fetch('/menu.php?' + Math.floor(Math.random() * 1000))
+          .then(res => res.text())
+          .then(data => {
+            document.body.innerHTML += data;
+            // bus.jsの処理をここで呼び出す
+            const script = document.createElement("script");
+            script.src = "/LINK/link.js";
+            script.onload = () => {
+              console.log("link.js loaded");
+            };
+            document.body.appendChild(script);
+          })
+          .catch(error => console.error("Error loading menu.html:", error));
+      });
+    </script>
+    <script>
+      navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+        if (registration.waiting) {
+          registration.waiting.postMessage({ action: 'skipWaiting' });
+        }
+      });
+      </script>
+  </body>
+</html>

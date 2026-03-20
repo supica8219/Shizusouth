@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>静岡理工科大学 スクールバス時刻表サイト Shizusouth</title>
+    <meta content="静岡理工科大学 スクールバス時刻表サイト Shizusouth SIST"name="description">
+    <link rel="shortcut icon"href="/img/shizusouth_logo_192.png">
+    <link media="print" onload="this.media='all'"rel="stylesheet"href="/CSS/styles.css">
+    <link rel="manifest"href="/manifest.json">
+    <link rel="apple-touch-icon"href="/img/shizusouth_logo_192.png"sizes="192x192">
+    <meta name="google-site-verification"content="cTLHw98HjFh764reNhYdfaeKFPQkps16a_G5GJjSJ70">
+    <meta name="theme-color"content="#603">
+    <meta name="apple-mobile-web-app-capable"content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style"content="black">
+    <meta name="apple-mobile-web-app-title"content="Shizusouth">
+    <meta name="viewport"content="width=device-width,initial-scale=1.0,user-scalable=yes">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+  </head>
+  <body>
+    <header style ="text-align: left;">
+      <a href="https://twitter.com/FoXide531"><img src="/img/kurogane3.png"alt="kurogane"class="kurogane"></a>
+      <h1 style="display:inline-block;"><a href="/TOP/"class="title">Shizusouth</a></h1>
+      <!--<img src="/img/menu.svg"onclick="view_menu()"style="background-color:white;position:fixed;top:0px;right:0px;"alt="menu">-->
+    </header>
+    <main>
+        <!-- サービス停止
+      <h1 style="margin-top:100px;margin-bottom:30px;font-size:45px;text-align:center;font-weight:bolder;">Shizusouth<br>ようこそ</h1>
+      <p class="center"style="width:60%;font-weight:800;margin-bottom:10px;">静岡理工科大学のスクールバス時刻表サイトです。<br>電車、バスを選択して時刻表を確認してください。</p>
+        -->
+      <p id="update"class="center"style="width:80%;font-weight:bold;font-size:18px;margin-bottom:400px;">
+        【お知らせ】<br>
+          本時刻表サービスですが、2026年3月もちまして<br>
+          公開を終了することになりました。<br>
+          日々の通学などで使ってくださった方、<br>
+          長年ありがとうございました。
+      </p>
+    </main>
+        <!-- サービス停止
+    <footer>
+      <ul>
+        <li><a href="/STATION/"><img src="/img/train.svg"alt="train"><p style="font-size:20px;font-weight:bold;">電車</p></a></li>
+        <li><a href="/"><img src="/img/bus.svg"alt="bus"><p style="font-size:20px;font-weight:bold;">バス</p></a></li>
+      </ul>
+    </footer>
+    -->
+    <script>
+      fetch("/TOP/update.txt?" + Math.floor(Math.random() * 10000))
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response for update.txt was not ok');
+        }
+        return response.text();
+      })
+      .then(data =>{
+        document.getElementById('update').innerHTML = data
+      })
+      .catch(error => {
+        console.error("Error fetching update.txt:", error);
+      });
+      function view_menu(){
+        var menu=document.getElementById("menu");
+        menu.style.display="block";
+      }
+      function close_menu(){
+        var menu=document.getElementById("menu");
+        menu.style.display="none";
+      }
+    </script>
+    <!-- サービス停止
+    <script>
+      navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+        if (registration.waiting) {
+          registration.waiting.postMessage({ action: 'skipWaiting' });
+        }
+      });
+      </script>
+
+    <script>
+      fetch('/menu.php?'+ Math.floor(Math.random() * 1000))
+      .then(res => res.text())
+      .then(data => document.body.innerHTML += data);
+    </script>
+    -->
+  </body>
+</html>

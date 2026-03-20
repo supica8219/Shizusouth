@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Shizusouth 免責事項</title>
+    <meta content="Shizusouth 免責事項"name="description">
+    <link rel="shortcut icon"href="/img/logo192.png">
+    <link rel="stylesheet"href="/CSS/styles.css">
+    <link rel="manifest"href="/manifest.json">
+    <link rel="apple-touch-icon"href="/img/logo192.png"sizes="192x192">
+    <meta name="google-site-verification"content="cTLHw98HjFh764reNhYdfaeKFPQkps16a_G5GJjSJ70">
+    <meta name="theme-color"content="#603">
+    <meta name="apple-mobile-web-app-capable"content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style"content="black">
+    <meta name="apple-mobile-web-app-title"content="Shizusouth">
+    <meta name="viewport"content="width=device-width,initial-scale=1.0,user-scalable=yes">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+  </head>
+  <body style="margin-top:50px;">
+    <header>
+      <a href="https://twitter.com/FoXide531"><img src="/img/kurogane3.png"alt="kurogane"class="kurogane"></a>
+      <h1 style="display:inline-block;"><a href="/TOP/"class="title">Shizusouth</a></h1>
+      <img src="/img/menu.svg"onclick="view_menu()"style="background-color:white;position:fixed;top:0px;right:0px;"alt="menu">
+    </header>
+    <main>
+      <h1 style="display:block;width:80%;margin:0 auto;font-weight:800;text-align:center;font-size:40px;">※免責事項※</h1>
+      <p style="display:block;width:80%;margin:0 auto;font-weight:800;text-align:center;margin-top:20px;">本アプリ時刻表は電車の遅延には対応していません。<br>電車は特急等除外し、普通列車のみを掲載しています。<br>表示間違いによる遅刻・欠席等の<br>責任は取れません。<br>あくまで目安としてご使用ください。</p>
+      <p style="display:block;width:80%;margin:0 auto;font-weight:800;text-align:center;">
+        表示間違い等、問い合わせございましたら<a href="https://twitter.com/shizusouth_com"style="color:#00b;">こちら</a>までお願い致します。
+      </p>
+    </main>
+    <footer>
+      <ul>
+        <li><a href="/STATION"><img src="/img/train.svg"alt="train"><p style="font-size:20px;font-weight:bold;">電車</p></a></li>
+        <li><a href="/"><img src="/img/bus.svg"alt="bus"><p style="font-size:20px;font-weight:bold;">バス</p></a></li>
+      </ul>
+      <p></p>
+    </footer>
+
+    <script>
+      function view_menu(){
+        var menu=document.getElementById("menu");
+        menu.style.display="block";
+      }
+      function close_menu(){
+        var menu=document.getElementById("menu");
+        menu.style.display="none";
+      }
+    </script>
+    <script>
+      navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+        if (registration.waiting) {
+          registration.waiting.postMessage({ action: 'skipWaiting' });
+        }
+      });
+      </script>
+        <script>
+          fetch('/menu.php?'+ Math.floor(Math.random() * 1000))
+          .then(res => res.text())
+          .then(data => document.body.innerHTML += data);
+        </script>
+  </body>
+</html>

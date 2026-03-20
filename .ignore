@@ -1,0 +1,10 @@
+# 作業データ
+DATA/
+
+# VSCode設定
+.vscode/
+
+# 未公開機能
+AGREE/
+OCR/
+LINK/

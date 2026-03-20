@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>静岡理工科大学 スクールバス時刻表 SIST</title>
+    <meta content="静岡理工科大学 スクールバス時刻表 SIST"name="description">
+    <link rel="shortcut icon"href="/img/shizusouth_logo_192.png">
+    <link media="print" onload="this.media='all'"rel="stylesheet"href="/CSS/styles.css">
+    <link rel="manifest"href="/manifest.json">
+    <link rel="apple-touch-icon"href="/img/shizusouth_logo_192.png"sizes="192x192">
+    <meta name="google-site-verification"content="cTLHw98HjFh764reNhYdfaeKFPQkps16a_G5GJjSJ70">
+    <meta name="theme-color"content="#603">
+    <meta name="apple-mobile-web-app-capable"content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style"content="black">
+    <meta name="apple-mobile-web-app-title"content="Shizusouth">
+    <meta name="viewport"content="width=device-width,initial-scale=1.0,user-scalable=yes">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+  </head>
+  <body>
+    <header>
+      <a href="https://twitter.com/FoXide531"><img src="/img/kurogane3.png"alt="kurogane"class="kurogane"></a>
+      <h1 style="display:inline-block;"><a href="/TOP/"class="title">Shizusouth</a></h1>
+      <img src="/img/menu.svg"onclick="view_menu()"style="background-color:white;position:fixed;top:0px;right:0px;"alt="menu">
+    </header>
+    <main id="body"style="margin-top:32px;">
+      <h2 class="theme"id="theme">スクールバス時刻表</h2>
+      <div id="content"class="content"></div>
+      <button id="button"class="button"onclick="More_Info_Bus()">+</button>
+    </main>
+    <footer>
+      <ul>
+        <li><a href="/STATION/"><img src="/img/train.svg"alt="train"><p style="font-size:20px;font-weight:bold;">電車</p></a></li>
+        <li><a href="/"><img src="/img/bus.svg"alt="bus"><p style="font-size:20px;font-weight:bold;">バス</p></a></li>
+      </ul>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        fetch('/menu.php?' + Math.floor(Math.random() * 1000))
+          .then(res => res.text())
+          .then(data => {
+            document.body.innerHTML += data;
+            // bus.jsの処理をここで呼び出す
+            const script = document.createElement("script");
+            script.src = "/bus.js?" + Math.floor(Math.random() * 10000);
+            script.onload = () => {
+              console.log("bus.js loaded");
+            };
+            document.body.appendChild(script);
+          })
+          .catch(error => console.error("Error loading menu.html:", error));
+      });
+    </script>
+    <script>
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      if (registration.waiting) {
+        registration.waiting.postMessage({ action: 'skipWaiting' });
+      }
+    });
+    if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then(function (registrations) {
+      for (let registration of registrations) {
+        registration.update();
+      }
+    });
+    }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+RewriteEngine on
+
+# HTTP → HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# www → 非www
+RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+
+# TOP/index.html は除外
+RewriteCond %{REQUEST_URI} !^/TOP/index.html$
+
+# 静的ファイルも除外（これ重要）
+RewriteCond %{REQUEST_URI} !\.(css|js|png|jpg|jpeg|gif|ico)$
+
+# それ以外をリダイレクト
+RewriteRule ^.*$ /TOP/index.html [R=302,L]

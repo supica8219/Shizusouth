@@ -1,0 +1,159 @@
+*{
+  margin:0px;
+  padding:0px;
+  margin-top:0px;
+  margin-bottom:0px;
+  color:#603;
+}
+body{
+  background-color:#fff;
+}
+li{
+  list-style:none;
+}
+a{
+  text-decoration:none;
+}
+main{
+  padding-top:48px;
+}
+img{
+  width:48px;
+  height:48px;
+}
+.center{
+  text-align:center;
+  margin:0 auto;
+  display:block;
+}
+.icon{
+  width:30px;
+  height:30px;
+  vertical-align:middle;
+}
+select{
+  -webkit-appearance:none;
+  text-align:center;
+  text-align-last:center;
+  appearance:none;
+  border:1px solid #603;
+  border-radius:0px;
+  font-size:18px;
+  background-color:#fff;
+  padding:3px;
+}
+#menu{
+  display:none;
+  top:0px;
+  right:0px;
+  width:50%;
+  height:100%;
+  position:fixed;
+  background-color:#603;
+  opacity:0.8;
+  z-index:2;
+}
+#menu ul li a{
+  display:block;
+  color:#fff;
+  font-size:20px;
+  padding:10px 0px;
+}
+#menu ul li a:hover{
+  background-color:#714;
+}
+header{
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100%;
+  background-color:#603;
+  z-index:1;
+}
+footer{
+  position:fixed;
+  bottom:0px;left:0px;
+  background-color:#ebebeb;
+  z-index:1;
+}
+footer ul{
+  display:flex;
+}
+footer li{
+  width:50vw;
+}
+footer li a{
+  background-color:#ebebeb;
+  font-size:40px;
+  padding:30px 0px;
+  text-align:center;
+  display:block;
+}
+footer li a:hover{
+  background-color:#e6e6e6;
+}
+.theme{
+  font-size:40px;
+  text-align:center;
+  font-weight:bolder;
+  padding:30px 0px;
+}
+.theme2{
+  font-size:40px;
+  text-align:center;
+  font-weight:bolder;
+  padding:10px 0px;
+}
+/*bus-soon二つを入れる真ん中の灰色の入れ物*/
+.content{
+  background-color:#ebebeb;
+  display:flex;
+  width:85%;
+  margin:10px auto;
+  padding:10px;
+  border-radius:10px;
+}
+/* 左右のdiv入れ物 */
+.time-line{
+  width:50%;
+  font-size:30px;
+  font-weight:900;
+}
+/* JavaScriptベース説明文 */
+.time-line p{
+  margin:10px 0px;
+  color:#502;
+  text-align:center;
+}
+.time-line .time-line-description{
+  font-size:20px;
+}
+/* +-ボタン */
+.button{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:25px;
+  height:25px;
+  border-radius:50%;
+  margin:0 auto;
+  margin-top:2.5vh;
+  margin-bottom:250px;
+  font-weight:bold;
+  color:#fff;
+  background-color:#603;
+  border:1px solid #4c0026;
+}
+/* くろがね隊ロゴ */
+.kurogane{
+  vertical-align:bottom;
+  height:60px;
+  width:60px;
+}
+.title{
+  display:inline-block;
+  font-size:37px;
+  line-height:50px;
+  vertical-align:bottom;
+  color:#fff;
+}
